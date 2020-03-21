@@ -6,11 +6,11 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "deploy": "webpack --config webpack.prod.js",
+    "deploy": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
