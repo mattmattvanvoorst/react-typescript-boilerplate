@@ -1,5 +1,6 @@
 const path = require('path')
 const alias = require('./webpack.alias')
+const CircularDependencyPlugin = require('circular-dependency-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -56,6 +57,12 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CircularDependencyPlugin({
+      exclude: /a\.js|node_modules/,
+      failOnError: true,
+      allowAsyncCycles: false,
+      cwd: process.cwd(),
+    }),
     new HtmlWebpackPlugin({ template: path.resolve('index.html') }),
     new CopyWebpackPlugin([{ from: 'assets', to: path.resolve(__dirname, 'dist/assets') }]),
   ],
