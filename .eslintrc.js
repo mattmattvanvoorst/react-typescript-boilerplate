@@ -1,4 +1,4 @@
-module.exports = {
+  module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-hooks', 'simple-import-sort'],
   extends: [
@@ -46,6 +46,7 @@ module.exports = {
     'import/namespace': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'off',
   },
   settings: {
     react: {
